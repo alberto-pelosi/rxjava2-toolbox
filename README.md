@@ -1,1 +1,1 @@
-# rxjava2-toolbox
+# rxjava2-toolbox (notes about "Learning RxJava" - Thomas Nield - Packt
