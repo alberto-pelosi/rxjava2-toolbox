@@ -45,7 +45,7 @@ public class Retry {
 
     @Test
     void retry2() throws InterruptedException {
-        Observable.just(1,2,10,0,5).map(e -> 10 / e).retryWhen(errors -> errors
+        Observable.just(1, 2, 10, 0, 5).map(e -> 10 / e).retryWhen(errors -> errors
                 .zipWith(Observable.range(EXPONENT_START, RETRY_COUNT), (n, i) -> i).flatMap(retryCount -> Observable.timer((long) Math.pow(EXPONENTATION_BASE, retryCount), TimeUnit.SECONDS)))
                 .subscribe(System.out::println);
         Thread.sleep(150000);
